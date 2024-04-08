@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useFetch } from '../hooks/useFetch'
+import { NewsListApp } from '../components/NewsList/NewsListApp'
 
 
 export const HomePage =  () => {
@@ -7,12 +8,15 @@ export const HomePage =  () => {
   
   return (
     <>
-      <h1>Noticias</h1>
+      <div className="row">
+        <div className="col-sm-12 d-flex justify-content-center">
+          <h1 className="text-primary">Noticias</h1>
+        </div>
+      </div>
       {
         isLoading ? <h4>Cargando ... </h4>
-        : <ul>
-        { data.articles.map(article => <li className='m-2' key={article.title} >{ article.title }</li>) }
-        </ul>
+        : 
+        <NewsListApp articles={data.articles} />
       }
     </>
   )}

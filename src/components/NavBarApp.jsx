@@ -14,22 +14,22 @@ export const NavBarApp = () => {
                 <NavLink to="/" className="nav-link active" aria-current="page" >General</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/new/3" className="nav-link" >Negocios</NavLink>
+                <NavLink to="/categoria/business" className="nav-link" >Negocios</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/new/3" className="nav-link" >Entretenimiento</NavLink>
+                <NavLink to="/categoria/entertainment" className="nav-link" >Entretenimiento</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/new/3" className="nav-link" >Salud</NavLink>
+                <NavLink to="/categoria/health" className="nav-link" >Salud</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/new/3" className="nav-link" >Ciencia</NavLink>
+                <NavLink to="/categoria/science" className="nav-link" >Ciencia</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/new/3" className="nav-link" >Deportes</NavLink>
+                <NavLink to="/categoria/sports" className="nav-link" >Deportes</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/new/3" className="nav-link" >Tecnología</NavLink>
+                <NavLink to="/categoria/technology" className="nav-link" >Tecnología</NavLink>
               </li>
             </ul>
             <form className="d-flex" role="search">
