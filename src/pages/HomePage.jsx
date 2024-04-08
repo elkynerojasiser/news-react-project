@@ -1,26 +1,18 @@
 import { useState, useEffect } from 'react'
+import { useFetch } from '../hooks/useFetch'
 
-export const HomePage = () => {
-  const [articles,setArticles] = useState([])
-  const fetcNews = async () => {
-    try {
-      const response = await fetch("https://newsapi.org/v2/top-headlines?category=entertainment&country=co&apiKey=92b08b652b0340dca3ca92b2939a3a29")
-      const data = await response.json()
-      setArticles([...articles, data.articles])
-    }catch( error ) {
-      console.log(error)
-    }
-    
-  }
 
-  useEffect(() => {
-    fetcNews()
-  },[])
+export const HomePage =  () => {
+  const { data, isLoading, errors } = useFetch(`?category=general&country=co`)
+  
   return (
     <>
       <h1>Noticias</h1>
-      <ul>
-        
-      </ul>
+      {
+        isLoading ? <h4>Cargando ... </h4>
+        : <ul>
+        { data.articles.map(article => <li className='m-2' key={article.title} >{ article.title }</li>) }
+        </ul>
+      }
     </>
   )}
